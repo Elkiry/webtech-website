@@ -1,0 +1,584 @@
+
+* { /* for all html elements */
+  margin: 0;
+  padding: 0;
+  /* above removes white line around wbst */
+}
+.header {
+  min-height: 40rem;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../assets/Background.png); /* gradient over image */
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  padding: 2% 4%;
+  justify-content: space-between;
+  align-items: center;
+  position: static;
+}
+nav img {
+  width: 12.5rem;
+}
+.nav-links {
+  flex: 1; /* will occupy all space in row */
+  text-align: right;
+}
+.nav-links ul li {
+  list-style: none; /* no bullets */
+  display: inline-block; /* make horizontally */
+  padding: 0.5rem 0.75rem;
+  position: relative;
+}
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.nav-links ul li::after { /* start hover over menu */
+  content: "";
+  width: 0%;
+  height: 0.125rem;
+  background: #3e3d6b;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after { /* end hover over menu */
+  width: 100%;
+}
+nav .fa {
+  display: none;
+}
+
+.text-box {
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text-box h1 {
+  font-size: 4rem;
+}
+.text-box p {
+  margin: 1.25rem 0 2.5rem; /* top, left&right, bottom */
+  font-size: 14px;
+  color: #fff;
+}
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 0.06rem solid #fff;
+  padding: 0.75rem 2.125rem;
+  font-size: 0.85rem;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.hero-btn:hover {
+  border: 0.06rem solid #3e3d6b;
+  background: #3e3d6b;
+}
+
+nav .fa { /* X & hamburger not visible in wide screens */
+    display: none;
+  }
+
+@media (max-width: 700px) {
+    .text-box h1 {
+    font-size: 1.25rem;
+  }
+
+  .nav-links ul li {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    background: #3e3d6b;
+    height: 100vh;
+    width: 12.5rem;
+    top: 0;
+    right: -19rem;
+    text-align: left;
+    z-index: 2;
+    transition: 1s;
+  }
+  .nav-links ul {
+    padding: 2rem;
+  }
+  nav .fa { /* X & hamburger visible in mobile */
+    display: block;
+    color: #fff;
+    margin: 0.7rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+}
+
+/*---------- Platforms --------*/
+
+.platforms {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 6.25rem;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+p {
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.375rem;
+  padding: 0.625rem;
+}
+.row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.platforms-col {
+  flex-basis: 31%;
+  background: #dfe7f5;
+  border-radius: 0.625rem;
+  margin-bottom: 5%;
+  padding: 1.25rem 0.75rem;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin: 0.625rem 0;
+}
+.platforms-col:hover {
+  box-shadow: 0 0 1.25rem 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* ---------------- campus ----------------
+
+.campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 0.625rem;
+    margin-bottom: 1.875rem;
+    position: relative;
+    overflow: hidden;
+}
+.campus-col img{
+    width: 100%;
+}
+
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: .5s;
+}
+.layer:hover{
+    background: rgba(226, 0, 0, 0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: .5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+
+
+
+/*---------------- testimonials ------------------*/
+
+.testimonials {
+  width: 80%;
+  margin: auto;
+  padding-top: 6.25rem;
+  text-align: center;
+}
+
+.testimonial-col {
+  flex-basis: 44%;
+  border-radius: 0.625rem;
+  margin-bottom: 5%;
+  text-align: left;
+  background: #dfe7f5;
+  padding: 1.25rem;
+  cursor: pointer;
+  display: flex;
+}
+.testimonial-col img {
+  height: 6rem;
+  margin-left: 0.5rem;
+  margin-right: 2rem;
+  border-radius: 50%;
+}
+.testimonial-col blockquote {
+  padding: 0;
+  color: #777;
+}
+.testimonial-col h3 {
+  margin-top: 15px;
+  text-align: left;
+}
+.testimonial-col .fa {
+  color: #3e3d6b;
+}
+
+@media (max-width: 700px) {
+  .testimonial-col img {
+    margin-left: 0px;
+    margin-right: 15px;
+  }
+}
+
+/*-------- Call To Shop ----------*/
+
+.cts {
+  margin: 6.25rem auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../assets/Background.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.625rem;
+  text-align: center;
+  padding: 6.25rem 0;
+}
+.cts h1 {
+  color: #9baae6;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+@media (max-width: 700px) {
+  .cts h1 {
+    font-size: 24px;
+  }
+}
+
+/*--------------Footer---------------*/
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.875rem 0;
+}
+.footer h4 {
+  margin-bottom: 25px;
+  margin-top: 1.25rem;
+  font-weight: 600;
+}
+
+.icons .fa {
+  color: #3e3d6b;
+  margin: 0 2.125rem;
+  cursor: pointer;
+  padding: 18px 0;
+}
+.fa-heart-o {
+  color: #3e3d6b;
+}
+
+/*--------------- Sub Header CSS --------------*/
+
+.sub-header {
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../assets/Background.png);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+}
+.sub-header h1 {
+  margin-top: 6.25rem;
+}
+
+/*--------------- Twitch Page--------------*/
+
+.about-twitch {
+  width: 80%;
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.about-col {
+  flex-basis: 48%;
+  padding: 1.875rem 2px;
+}
+.about-col h1 {
+  padding-top: 0;
+}
+.about-col p {
+  padding: 15px 0 25px;
+}
+.about-col-img {
+  width: 100%;
+}
+
+.hero-btn.purple-btn {
+  border: 1px solid #3e3d6b;
+  background: transparent;
+  color: #3e3d6b;
+}
+.hero-btn.purple-btn:hover {
+  border: 1px solid #3e3d6b;
+  background: #3e3d6b;
+  color: #fff;
+}
+.hero-btn.purple-btn::after {
+  background: #3e3d6b;
+}
+.hero-btn.purple-btn::before {
+  background: #3e3d6b;
+}
+.content-image {
+  flex-basis: 50%;
+}
+
+/*---------- BSC Page -------------*/
+
+.bsc-content {
+  width: 80%;
+  margin: auto;
+  padding: 60px 0;
+}
+.bsc-left {
+  flex-basis: 65%;
+}
+.bsc-right {
+  flex-basis: 32%;
+}
+.bsc-left img {
+  width: 100%;
+}
+.bsc-left h2 {
+  color: #222;
+  font-weight: 600;
+  margin: 1.875rem 0;
+}
+.bsc-left p {
+  color: #999;
+  padding: 0;
+}
+
+.bsc-right h3 {
+  background: #9baae6;
+  color: #fff;
+  padding: 7px 0;
+  font-size: 16px;
+  margin-bottom: 1.25rem;
+}
+.bsc-right p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.comment-box {
+  border: 1px solid #ccc;
+  margin: 50px 0;
+  padding: 0.625rem 1.25rem;
+}
+
+.comment-box h3 {
+  text-align: left;
+}
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 0.625rem;
+  margin: 15px 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background: #f0f0f0;
+}
+.comment-form button {
+  margin: 0.625rem 0;
+}
+
+@media (max-width: 700px) {
+  .sub-header h1 {
+    font-size: 24px;
+  }
+}
+
+/*---------- Shop --------*/
+
+.shop {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 6.25rem;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+p {
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.375rem;
+  padding: 0.625rem;
+}
+.row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop-col {
+  flex-basis: 31%;
+  background: #dfe7f5;
+  border-radius: 0.625rem;
+  margin-bottom: 5%;
+  padding: 1.25rem 0.75rem;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin: 0.625rem 0;
+}
+.shop-col:hover {
+  box-shadow: 0 0 1.25rem 0px rgba(0, 0, 0, 0.2);
+}
+.shop-col img {
+  width: 80%;
+  border-radius: 0.625rem;
+}
+
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/*-------------- Alternate ----------------*/
+
+.alternate {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 6.25rem;
+}
+.alternate-col {
+  flex-basis: 31%;
+  border-radius: 0.625rem;
+  margin-bottom: 5%;
+  text-align: left;
+}
+.alternate-col img {
+  width: 100%;
+  border-radius: 0.625rem;
+}
+.alternate-col p {
+  padding: 0;
+}
+.alternate-col h3 {
+  margin-top: 16px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/*------- Contact Us Page ------------*/
+
+.location {
+  width: 80%;
+  margin: auto;
+  padding: 80px 0;
+}
+.location iframe {
+  width: 100%;
+}
+
+.contact-us {
+  width: 80%;
+  margin: auto;
+}
+.contact-col {
+  flex-basis: 48%;
+  margin-bottom: 1.875rem;
+}
+
+.contact-col div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.contact-col div .fa {
+  font-size: 28px;
+  color: #3e3d6b;
+  margin: 0.625rem;
+  margin-right: 1.875rem;
+}
+
+.contact-col div p {
+  padding: 0;
+}
+.contact-col div h5 {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: 400;
+}
+.contact-col input,
+.contact-col textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 17px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #777;
+}
